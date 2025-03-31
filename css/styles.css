@@ -81,7 +81,6 @@ span {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
-
     color: var(--tittle-text-color);
     list-style: none;
     font-weight: 500;
@@ -108,13 +107,25 @@ span {
 }
 
 .header-contact {
-    display: block;
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
     color:var(--primary-text-color);
     font-weight: 500;
     font-size: 14px;
     list-style: none;
+    text-decoration: none;
+}
+.mail::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    background-image: url(../images/main/mail.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .header-contact:hover,
@@ -122,17 +133,34 @@ span {
     color:var(--accent-color);
 }
 
-/* Hero */
-.hero {
-    height: 600px;
-    background-color: #2F303A;
-    padding: 0;
+.header-contact:hover .mail::before {
+    background-color: red;
 }
+
+/* Hero */
+
+.hero {
+    background-color: #2F303A;
+    padding: 0; 
+}
+
 .container-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 200px 0;
+}
+.container-hero {
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, 
+    rgba(47, 48, 58, 0.4), 
+    rgba(47, 48, 58, 0.4)), 
+    url("../images/main/heroimage.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .hero-tittle {
     color: var(--primary-color);
